@@ -1,0 +1,36 @@
+FROM ubuntu
+
+# Update ubuntu & Install necesarry software
+RUN apt-get update && apt-get install -y \
+	curl \
+	git \
+	python \
+	python-dev \
+	python-distribute \
+	python-pip \
+	virtualenv \
+	supervisor \
+	nginx
+
+# Create Directories
+RUN mkdir -p /home/root/apps/bitbucket_webhook \
+			 /home/root/apps/production_app \
+			 /home/root/apps/development_app 
+
+
+# Get the hook file from github
+RUN cd /home/root/apps/bitbucket_webhook && git clone https://github.com/ankitjamuar/CI-Boilerplate.git && cd CI-Boilerplate
+
+# Install Python packages
+RUN pip install requirements.txt
+RUN sudo chmod u+x gunicorn_bitbucket_webhook
+RUN sudo supervisorctl -c /home/root/apps/bitbucket_webhook/CI-Boilerplate/supervisor.conf reread
+RUN sudo supervisorctl -c /home/root/apps/bitbucket_webhook/CI-Boilerplate/supervisor.conf update
+
+
+
+# Create Directory
+RUN mkdir /home/root/apps
+
+# Install python packages
+RUN pip install requiremnents.txt
