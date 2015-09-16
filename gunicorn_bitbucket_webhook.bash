@@ -31,6 +31,7 @@ exec gunicorn ${DJANGO_WSGI_MODULE}:app \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user=$USER --group=$GROUP \
-  --bind=unix:$SOCKFILE \
+  #--bind=unix:$SOCKFILE \
+  --bind 0.0.0.0:8000 \
   --log-level=debug \
   --log-file=-
