@@ -1,3 +1,4 @@
+#!/bin/bash
 #####################################################
 #
 # This is for DJANGO but can be used for any WSGI app
