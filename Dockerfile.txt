@@ -25,7 +25,7 @@ RUN cd /home/root/apps/bitbucket_webhook && git clone https://github.com/ankitja
 
 # Install Python packages
 RUN pip install uwsgi
-RUN pip install -r requirements.txt
+RUN pip install flask
 RUN sudo supervisorctl -c /home/root/apps/bitbucket_webhook/CI-Boilerplate/supervisor.conf reread
 RUN sudo supervisorctl -c /home/root/apps/bitbucket_webhook/CI-Boilerplate/supervisor.conf update
 
