@@ -1,4 +1,6 @@
-FROM ubuntu
+from ubuntu:14.04
+
+maintainer Ankit Sinha ankitsinha611@gmail.com
 
 # Update ubuntu & Install necesarry software
 RUN apt-get update && apt-get install -y \
@@ -22,8 +24,8 @@ RUN mkdir -p /home/root/apps/bitbucket_webhook \
 RUN cd /home/root/apps/bitbucket_webhook && git clone https://github.com/ankitjamuar/CI-Boilerplate.git && cd CI-Boilerplate
 
 # Install Python packages
+RUN pip install uwsgi
 RUN pip install -r requirements.txt
-RUN sudo chmod u+x gunicorn_bitbucket_webhook
 RUN sudo supervisorctl -c /home/root/apps/bitbucket_webhook/CI-Boilerplate/supervisor.conf reread
 RUN sudo supervisorctl -c /home/root/apps/bitbucket_webhook/CI-Boilerplate/supervisor.conf update
 

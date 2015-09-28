@@ -12,7 +12,9 @@ This project is a boiler plate for any project start, it consist of following th
 - Nginx: Proxy server
 
 - Directory Structure:
-  /home/user/apps/
+  ```
+/home/user/apps/
     - /production_APP_NAME    -> Linked to Master Branch of Git Repo
     - /development_APP_NAME   -> Linked to Development Branch of Git Repo
     - /bitbucket_webhook      -> Flask App that auto pull codes from Github/Bitbucket/Gitlab
+```

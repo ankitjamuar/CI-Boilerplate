@@ -1,3 +1,4 @@
+#!/bin/bash
 #####################################################
 #
 # This is for DJANGO but can be used for any WSGI app
@@ -5,8 +6,8 @@
 #####################################################
 
 NAME="bitbucket_webhook"                           # Name of the application
-DJANGODIR=/home/root/apps/bitbucket_webhook/CI-Boilerplate             # Django project directory
-SOCKFILE=/home/root/apps/bitbucket_webhook/CI-Boilerplate   # we will communicte using this unix socket
+DJANGODIR=/home/root/apps/bitbucket_webhook             # Django project directory
+SOCKFILE=/home/root/apps/bitbucket_webhook.sock   # we will communicte using this unix socket
 USER=root                                        # the user to run as
 GROUP=root                                    # the group to run as
 NUM_WORKERS=3                                     # how many worker processes should Gunicorn spawn
@@ -31,6 +32,7 @@ exec gunicorn ${DJANGO_WSGI_MODULE}:app \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user=$USER --group=$GROUP \
-  --bind=unix:$SOCKFILE \
+  #--bind=unix:$SOCKFILE \
+  --bind 0.0.0.0:8000 \
   --log-level=debug \
   --log-file=-

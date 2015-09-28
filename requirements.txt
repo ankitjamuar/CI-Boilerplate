@@ -1,3 +1,2 @@
-virualenv
 flask
 gunicorn
