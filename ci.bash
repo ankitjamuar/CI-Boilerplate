@@ -72,5 +72,13 @@ cd CI-Boilerplate
 git pull https://github.com/ankitjamuar/CI-Boilerplate.git
 fi
 
-cp uwsgi.ini /etc/uwsgi/sites-enabled
+cp uwsgi.ini /etc/uwsgi/apps-enabled/
+cp app_nginx.conf /etc/nginx/sites-enabled
+
+#####################################
+# Restarting UWSGI & NGINX
+#####################################
+echo "$(tput setaf 2)Restarting UWSGI$(tput sgr0)"
+sudo service uwsgi restart
+sudo service nginx restart
 exit 0
