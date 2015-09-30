@@ -55,10 +55,22 @@ echo "$(tput setaf 2)All Software Packages Installed$(tput sgr0)"
 ##############################
 echo "$(tput setaf 2)CREATING DIRECTORIES$(tput sgr0)"
 cd /home/$APP_USER
+
+if [ ! -d "apps"]; then
 mkdir apps
+fi
+
 cd /home/$APP_USER/apps
+
+# Create Production App directory if it dosen't exist
+if [ ! -d "production_app" ]; then
 mkdir production_app
+fi
+
+# Create Development App directory if it dosen't exist
+if [ ! -d "development_app" ]; then
 mkdir development_app
+fi
 
 # RUN git clone only when its not been cloned other wise run git pull
 if [ ! -d "CI-Boilerplate" ]; then
