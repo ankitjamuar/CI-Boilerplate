@@ -33,5 +33,5 @@ echo "APP_USER: $APP_USER"
 ###############################
 echo "INSTALLING SOFTWARES"
 sudo apt-get install -y curl git python python-dev python-distribute python-pip python-virtualenv supervisor nginx
-
+echo "All Software Packages Installed"
 exit 0
