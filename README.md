@@ -1,7 +1,7 @@
 # CI-Boilerplate
 This project is a boiler plate for any project start, it consist of following things and is Dockerized.
 
-- Git Listener: Its a  Flask App hooked to Github/Bitbucket/Gitlab for auto pulling code based on the branch it is pushed to.
+- Git Listener: Its a  Django and Flask App hooked to Github/Bitbucket/Gitlab for auto pulling code based on the branch it is pushed to.
   We generally have two branch one for production and one for development,  user will push to either of them and this 
   flask app will pull the code and place it in appropriate folder.
   
