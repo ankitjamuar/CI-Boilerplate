@@ -18,3 +18,6 @@ This project is a boiler plate for any project start, it consist of following th
     - /development_ap p    -> Linked to Development Branch of Git Repo
     - /CI_Boilerplate      -> Flask App that auto pull codes from Github/Bitbucket/Gitlab
 ```
+
+sudo apt-get install uwsgi-plugin-python
+for python on uwsgi file
