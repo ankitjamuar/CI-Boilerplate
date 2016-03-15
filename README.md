@@ -15,7 +15,7 @@ This project is a boiler plate for any project start, it consist of following th
   ```
 /home/user/apps/
     - /production_app      -> Linked to Master Branch of Git Repo
-    - /development_ap p    -> Linked to Development Branch of Git Repo
+    - /development_app    -> Linked to Development Branch of Git Repo
     - /CI_Boilerplate      -> Flask App that auto pull codes from Github/Bitbucket/Gitlab
 ```
 
